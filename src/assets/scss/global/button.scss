@@ -1,0 +1,104 @@
+.button {
+    padding: 24px 48px;
+    background-color: $blue;
+    color: $white;
+    border-radius: 48px;
+    text-transform: uppercase;
+    transition: $animation;
+    position: relative;
+    border: $blue-hover 1px solid;
+    &:hover {
+        background-color: $blue-hover;
+    }
+    &::after,
+    &::before {
+        transition: $animation;
+        position: absolute;
+        content: '';
+        border-radius: 48px;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        border: $blue-hover 1px solid;
+        // opacity: 1;
+    }
+
+    &:hover::after {
+        left: -8px;
+        top: -8px;
+        width: calc(100% + 16px);
+        height: calc(100% + 16px);
+        opacity: 0.5;
+    }
+    &:hover::before {
+        left: -20px;
+        border-radius: 60px;
+        top: -20px;
+        width: calc(100% + 40px);
+        height: calc(100% + 40px);
+        opacity: 0.2;
+    }
+}
+
+.pulse {
+    z-index: 5;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    transform: translate(-50%, 50%);
+    z-index: 4;
+    span {
+        transition: $animation;
+        border: rgba(248, 247, 255, 1) 1.5px solid;
+        border-radius: 50%;
+        left: 50%;
+        top: 50%;
+
+        transform: translate(-50%, -50%);
+        display: block;
+        position: absolute;
+
+        &:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            opacity: 70%;
+        }
+        &:nth-child(2) {
+            width: 132px;
+            height: 132px;
+
+            opacity: 60%;
+        }
+        &:nth-child(3) {
+            width: 188px;
+            height: 188px;
+
+            opacity: 40%;
+        }
+    }
+    &.active {
+        span {
+            border-color: $blue-hover;
+
+            &:nth-child(1) {
+                width: 100px;
+                height: 100px;
+                opacity: 50%;
+            }
+            &:nth-child(2) {
+                width: 170px;
+                height: 170px;
+
+                opacity: 30%;
+            }
+            &:nth-child(3) {
+                width: 200px;
+                height: 200px;
+
+                opacity: 10%;
+            }
+        }
+    }
+}
