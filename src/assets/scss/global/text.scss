@@ -1,90 +1,12 @@
-.title {
-    text-transform: uppercase;
-    color: $mainTextColor;
-    // font-family: $titleFont;
-    h3 {
-        @include adaptive-font(36, 25.34999);
-        @media (min-width: ($mw + px)) {
-            font-size: 36px;
-        }
-        @media (max-width: ($md3 + px)) {
-            .title__visibility {
-                display: none;
-            }
-        }
-    }
-    h2 {
-        font-weight: 400;
-        display: inline;
-        @include adaptive-font(54, 36);
-        @media (min-width: ($mw + px)) {
-            font-size: 54px;
-        }
-    }
-    &__orange {
-        color: $redColor;
-    }
-}
-
-.subtitle {
-    display: inline-block;
-    padding: 0 0 0 15px;
-
-    width: 280px + 30px;
-    @media (max-width: ($md3 + px)) {
-        padding: 0;
-        display: block;
-
-        width: 100%;
-    }
-    h4 {
-        display: inline;
-        @media (max-width: ($md3 + px)) {
-            padding: 0;
-            display: block;
-            width: 100%;
-        }
-    }
-}
-.struckOutText {
-    position: relative;
-    display: inline-block;
-    overflow: visibility;
-    &::after {
-        content: '';
-        position: relative;
-        left: 0;
-        width: 80px;
-        height: 2px;
-        background-color: $redColor;
-        display: block;
-        transform: translateY(-14px);
-    }
-}
-
-.blueText {
-    // .bender__feedback
-    @include adaptive-font(20, 18);
-    @media (min-width: ($mw + px)) {
-        font-size: 20px;
-    }
-    a {
-        color: $blueTextColor;
-        text-decoration: none;
-    }
-    h4 {
-        font-style: normal;
-        font-weight: 400;
-        color: $blueTextColor;
-        // font-family: $textFont;
-        @include adaptive-font(20, 18);
-        @media (min-width: ($mw + px)) {
-            font-size: 20px;
-        }
-    }
-}
-
 ::selection {
-    background: #4f495c;
-    color: #dff0d8;
+    background: $blue;
+    color: $white;
+}
+
+.title {
+    h3 {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 56px;
+    }
 }

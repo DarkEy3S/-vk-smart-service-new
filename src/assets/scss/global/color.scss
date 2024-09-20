@@ -1,29 +1,15 @@
 :root {
-    --color-logoColor: #595653;
-    --color-mainTextColor: #313131;
-    --color-blueTextColor: #3057a2;
     --color-white: #fff;
-    --color-redColor: #f54932;
-    --color-almondColor: #e9ded4;
-    --color-bottomBlack: #060606;
-    --color-bottomBorderBlack: #303030;
-    --color-bottomOrange: #fbce51;
-    --color-sunYellow: #fbce51;
-    --color-tableBorder: #d0d0d0;
-    --color-sliderControlsColor: #d9d9d9;
+    --color-blue: #4aa0de;
+    --color-blue-hover: #14a1e4;
+    --color-black: #100f0d;
+    --color-ghost-white: #f8f7ff;
 }
 
-$logoColor: var(--color-logoColor);
-$mainTextColor: var(--color-mainTextColor);
-$blueTextColor: var(--color-blueTextColor);
 $white: var(--color-white);
-$redColor: var(--color-redColor);
-$almondColor: var(--color-almondColor);
-$bottomBlack: var(--color-bottomBlack);
-$bottomBorderBlack: var(--color-bottomBorderBlack);
-$bottomOrange: var(--color-bottomOrange);
-$sunYellow: var(--color-sunYellow);
-$tableBorder: var(--color-tableBorder);
-$sliderControlsColor: var(--color-sliderControlsColor);
+$blue: var(--color-blue);
+$blue-hover: var(--color-blue-hover);
+$mainText: var(--color-black);
+$secondBg: var(--color-ghost-white);
 
 $animation: ease-in-out 0.25s;

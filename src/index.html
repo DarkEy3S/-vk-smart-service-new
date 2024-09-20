@@ -11,8 +11,14 @@
 
         <div class="app">
 
-            <div class="container" id="container">
+            @@include('./templates/components/main.html', {})
 
+            <div class="container">
+
+                @@include('./templates/components/logistics.html', {})
+                @@include('./templates/components/service.html', {})
+                @@include('./templates/components/about.html', {})
+                @@include('./templates/components/advantages.html', {})
 
 
             </div>
