@@ -1,0 +1,201 @@
+.form {
+    flex: 0 1 590px;
+    // .form__title
+    @media (width < ($md2 + px)) {
+        flex: 0 1 350px;
+    }
+
+    @media (width < ($md3 + px)) {
+        margin: 0 0 48px;
+    }
+    &__title {
+        margin: 0 0 48px;
+        @media (width < ($md3 + px)) {
+            margin: 0 0 16px;
+        }
+    }
+    &.popup {
+        h3 {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 56px;
+            @media (width < ($md2 + px)) {
+                font-size: 24px;
+                line-height: 28px;
+            }
+        }
+    }
+
+    // .form__subtitle
+
+    &__subtitle {
+        margin: 0 0 24px;
+        @media (width < ($md3 + px)) {
+            margin: 0 0 16px;
+        }
+    }
+
+    // .form__input
+
+    &__input {
+        display: block;
+        width: 100%;
+        margin: 0 0 24px;
+        border: 1px $blue solid;
+        border-radius: 48px;
+        padding: 21px 32px;
+        @media (width < ($md3 + px)) {
+            margin: 0 0 16px;
+        }
+    }
+
+    // .form__checkbox
+
+    &__checkbox {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+
+        & + label {
+            // align-items: center;
+            position: relative;
+            &::before {
+                cursor: pointer;
+                content: '';
+                display: block;
+                width: 30px;
+                top: 30px;
+                height: 30px;
+                flex-shrink: 0;
+                flex-grow: 0;
+                left: -46px;
+                border: 2px solid #000;
+                border-radius: 0.25em;
+                margin-right: 0.5em;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 50% 50%;
+                position: relative;
+                // top: 5px;
+                // margin: 0 14px 0 0;
+                transition: $animation;
+            }
+        }
+        &:checked + label::before {
+            border-color: $blue;
+            background-color: $blue;
+            background-image: url('@svg/check.svg');
+        }
+
+        &:not(:disabled):not(:checked) + label:hover::before {
+            border-color: $blue-hover;
+        }
+        /* стили для активного состояния чекбокса (при нажатии на него) */
+        &:not(:disabled):active + label::before {
+            background-color: $blue-hover;
+            border-color: $blue-hover;
+        }
+        /* стили для чекбокса, находящегося в фокусе */
+        &:focus + label::before {
+            box-shadow: 0 0 0 0.2rem rgba(74, 161, 224, 0.479);
+        }
+        /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+        &:focus:not(:checked) + label::before {
+            border-color: #80bdff;
+        }
+        /* стили для чекбокса, находящегося в состоянии disabled */
+        &:disabled + label::before {
+            background-color: #ffffff;
+        }
+    }
+
+    // .form__privacy
+
+    &__privacy {
+        // max-width: 300px;
+        font-size: 12px;
+        top: -30px;
+        display: inline-block;
+        max-width: 239px;
+        margin: 0 0 0 46px;
+        @media (width < ($md3 + px)) {
+            max-width: 100%;
+        }
+        &-url {
+            display: inline;
+            font-size: 12px;
+            text-decoration: underline !important;
+
+            color: #000;
+        }
+        &-popup {
+            display: block;
+        }
+    }
+    &__button {
+        display: block;
+        float: none;
+    }
+}
+
+.popup.active {
+    overflow-y: auto;
+    display: block;
+    z-index: 999;
+    position: fixed;
+    display: block;
+    display: block;
+    position: fixed;
+    min-width: 350px;
+    max-width: 1000px;
+    max-height: 620px;
+    min-height: 350px;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $white;
+    padding: 45px;
+    border-radius: 48px;
+}
+
+.popup {
+    display: none;
+    &__close {
+        cursor: pointer;
+        font-weight: 700;
+        position: absolute;
+        background-color: $white;
+        border: 2px solid $blue;
+        border-radius: 50%;
+        height: 35px;
+        width: 35px;
+        right: 35px;
+        top: 35px;
+        text-align: center;
+        transition: $animation;
+        span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &:hover {
+            background-color: $blue-hover;
+        }
+    }
+    &__block.active {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        opacity: 60%;
+        top: 0;
+        left: 0;
+        z-index: 7;
+    }
+}
+
+.popup__overflow {
+    overflow-y: hidden;
+}
