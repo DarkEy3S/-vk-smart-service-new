@@ -4,6 +4,11 @@
     // .logistics__info
     align-items: center;
     justify-content: space-between;
+    @media (width < ($md2 + px)) {
+        flex-direction: column;
+
+        margin: 0 0 64px;
+    }
 
     &__info {
         flex: 1 1 auto;
@@ -11,6 +16,15 @@
         background-color: $secondBg;
         border-radius: 24px 0 0 24px;
         height: 340px;
+        @media (width < ($md2 + px)) {
+            border-radius: 24px 24px 0 0;
+
+            height: auto;
+        }
+        @media (width < ($md1 + px)) {
+            height: auto;
+            flex: 0 1 auto;
+        }
     }
 
     // .logistics__img
@@ -18,7 +32,20 @@
     &__img {
         flex: 1 1 auto;
         max-width: 387px;
+        background-color: $secondBg;
+
+        @media (width < ($md2 + px)) {
+            max-width: 100%;
+            width: 100%;
+        }
+        @media (width > ($md2 + px)) and (width < ($md1 + px)) {
+            flex: 1 0 auto;
+            max-width: 450px;
+            height: 450px;
+        }
+
         img {
+            border-radius: 24px;
             width: 100%;
             height: 100%;
         }
@@ -34,6 +61,10 @@
             font-weight: 700;
             font-size: 32px;
             line-height: 48px;
+            @media (width < ($md2 + px)) {
+                font-size: 20px;
+                line-height: 28px;
+            }
         }
     }
 

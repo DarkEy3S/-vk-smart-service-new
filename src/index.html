@@ -5,7 +5,7 @@
     @@include('./templates/components/head.html', {})
 </head>
 
-<body something="non-standard">
+<body something="non-standard" class="">
     <div class="wrapper">
         @@include('./templates/components/header.html', {})
 
@@ -28,6 +28,7 @@
             </div>
         </div>
         @@include('./templates/components/footer.html', {})
+        @@include('./templates/components/form.html', {})
     </div>
 
     <script src="js/app.min.js"></script>

@@ -1,4 +1,4 @@
-$minwidth: 320px;
+$minwidth: 375px;
 $mw: 1200;
 $md1: $mw + 12;
 $md2: 992.98;
@@ -10,7 +10,7 @@ $md4: 479.98;
     max-width: $mw + px;
     margin: 0 auto;
     width: 100%;
-    padding: 0 15px;
+    padding: 0 8px;
     @media (max-width: ($md1+px)) {
         max-width: 970px;
     }

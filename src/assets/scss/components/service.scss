@@ -1,12 +1,21 @@
 .service {
     margin: 0 0 96px;
     // .service__title
-
+    @media (width < ($md2 + px)) {
+        margin: 0 0 64px;
+    }
     &__title {
         margin: 0 0 48px;
+
+        @media (width < ($md2 + px)) {
+            margin: 0 0 24px;
+        }
         h3 span {
             font-size: inherit;
             display: block;
+            @media (width < ($md2 + px)) {
+                display: inline;
+            }
         }
     }
 
@@ -19,9 +28,9 @@
     display: grid;
     grid-template-columns: 193.5px 193.5px 193.5px 193.5px 193.5px 193.5px;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: 'a a . b b .' '. c c . d d';
-    // .blocks-service__block
     align-items: center;
+
+    // .blocks-service__block
 
     &__block {
         flex-direction: column;
@@ -35,6 +44,9 @@
         z-index: 2;
         border-radius: 16px;
         margin: 0 0 24px;
+        img {
+            width: 100%;
+        }
     }
 
     // .blocks-service__icon
@@ -51,6 +63,12 @@
             z-index: 0;
 
             opacity: 70%;
+            @media (width < ($md2 + px)) {
+                top: 200px;
+            }
+            @media (width < ($md3 + px)) {
+                top: auto;
+            }
             &:nth-child(1) {
                 border: rgba(74, 160, 222, 0.7) 1px solid;
 
@@ -85,6 +103,12 @@
         padding: 20px;
         border-radius: 50%;
         box-shadow: 0px 4px 8px rgba(74, 160, 222, 0.2);
+        @media (width < ($md2 + px)) {
+            top: 200px;
+        }
+        @media (width < ($md3 + px)) {
+            top: auto;
+        }
         img {
             position: relative;
             display: inline-block;
@@ -103,6 +127,11 @@
             font-size: 24px;
             line-height: 32px;
             font-weight: 700;
+            @media (width < ($md2 + px)) {
+                font-size: 20px;
+
+                line-height: 28px;
+            }
         }
     }
 
@@ -114,25 +143,79 @@
     // .blocks-service__block-control
 
     &__block-control {
-        grid-area: a;
         align-self: self-start;
+        grid-row: 1 / 2;
+        grid-column: 1 / 3;
+        @media (width > ($md3 + px)) and (width < ($md1 + px)) {
+            grid-row: 1 / 2;
+            grid-column: 1 / 2;
+        }
+        @media (width < ($md3 + px)) {
+            grid-row: auto;
+            grid-column: auto;
+        }
     }
 
     // .blocks-service__block-development
 
     &__block-development {
-        grid-area: b;
+        grid-row: 1 / 2;
+        grid-column: 4 / 6;
+        @media (width > ($md3 + px)) and (width < ($md1 + px)) {
+            grid-row: 1 / 2;
+            grid-column: 2 / 3;
+        }
+        @media (width < ($md3 + px)) {
+            grid-row: auto;
+            grid-column: auto;
+        }
     }
 
     // .blocks-service__block-setting
 
     &__block-setting {
-        grid-area: c;
+        grid-row: 2 / 3;
+        grid-column: 2 / 4;
+        @media (width > ($md3 + px)) and (width < ($md1 + px)) {
+            grid-row: 2 / 3;
+            grid-column: 1 / 2;
+        }
+        @media (width < ($md3 + px)) {
+            grid-row: auto;
+            grid-column: auto;
+        }
     }
 
     // .blocks-service__block-consultations
 
     &__block-consultations {
-        grid-area: d;
+        grid-row: 2 / 3;
+        grid-column: 5 / 7;
+        @media (width > ($md3 + px)) and (width < ($md1 + px)) {
+            grid-row: 2 / 3;
+            grid-column: 2 / 3;
+        }
+        @media (width < ($md3 + px)) {
+            grid-row: auto;
+            grid-column: auto;
+        }
+    }
+
+    @media (width > ($md3 + px)) and (width < ($md1 + px)) {
+        grid-template-columns: 48% 48%;
+        grid-template-rows: auto auto;
+        justify-content: space-between;
+        gap: 48px;
+        align-items: start;
+    }
+    @media (width < ($md1 + px)) {
+        gap: 48px;
+        align-items: start;
+    }
+
+    @media (width < ($md3 + px)) {
+        grid-template-columns: 100%;
+
+        grid-template-rows: auto auto auto auto;
     }
 }

@@ -1,62 +1,102 @@
 .header {
-    position: relative;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+
+    z-index: 7;
     &__block {
-        margin: 24px 0 0;
-        display: flex;
-        justify-content: space-between;
-        position: absolute;
+        margin: 24px auto;
+        display: grid;
+        align-content: center;
+        grid-template-columns: auto 1fr auto auto;
+        max-width: $md1 + px;
+        align-items: center;
         height: 78px;
-        width: 100%;
+        padding: 0 32px;
         z-index: 2;
+        @media (width < ($md2 + px)) {
+            padding: 0 8px;
+            grid-template-columns: auto 1fr auto;
+
+            grid-template-row: 50% 50%;
+        }
+        @media (width < ($md3 + px)) {
+            grid-template-columns: 1fr auto;
+
+            grid-template-row: 50% 50%;
+        }
     }
 }
 
 .logo {
-    flex: 0 0 auto;
+    @media (width < ($md2 + px)) {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        width: 172px;
+    }
+    @media (width < ($md3 + px)) {
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
 }
 .nav {
-    flex: 1 1 auto;
+    flex: 1 0 auto;
     display: flex;
     justify-content: center;
-    align-items: center;
+    @media (width < ($md2 + px)) {
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    @media (width < ($md3 + px)) {
+        display: none;
+    }
+
     // .nav__link
 
     &__link {
-        margin: 0 16px;
+        margin: 0 0 0 32px;
+
+        text-align: left;
+        @media (width < ($md1 + px)) {
+            margin: 0 0 0 16px;
+        }
+        @media (width < ($md2 + px)) {
+            margin: 0 0 0 8px;
+        }
         a {
+            text-align: left;
             color: $white;
             font-weight: 500;
         }
     }
 
     // .nav__link-service
-
-    &__link-service {
-    }
-
-    // .nav__link-about
-
-    &__link-about {
-    }
-
-    // .nav__link-advantages
-
-    &__link-advantages {
-    }
 }
 .tell-header {
-    flex: 0 0 auto;
     line-height: 78px;
     margin: 0 37px 0 0;
     a {
         color: $white;
         text-decoration: none;
     }
+
+    @media (width < ($md2 + px)) {
+        line-height: normal;
+        margin: 0 0 0 0;
+        text-align: right;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
 }
 .language {
-    display: flex;
-    flex: 0 0 auto;
     align-items: center;
+
+    @media (width < ($md2 + px)) {
+        text-align: right;
+
+        margin: 0 0 0 0;
+        line-height: normal;
+    }
     &-en {
         color: $white;
     }

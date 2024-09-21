@@ -1,124 +1,36 @@
 .footer-top {
     padding: 72px 0 0;
+
     // .footer-top__form
     display: flex;
     justify-content: space-between;
-    &__form {
+
+    @media (width < ($md2 + px)) {
+        padding: 32px 0 0;
+    }
+    @media (width < ($md3 + px)) {
+        padding: 32px 32px 0;
+        flex-direction: column;
     }
 }
 .footer-top {
     // .footer-top__form
     margin: 0 0 68px;
-    &__form {
-    }
-}
-.form {
-    flex: 0 1 590px;
-    // .form__title
-
-    &__title {
-        margin: 0 0 48px;
-    }
-
-    // .form__subtitle
-
-    &__subtitle {
-        margin: 0 0 24px;
-    }
-
-    // .form__input
-
-    &__input {
-        display: block;
-        width: 100%;
-        margin: 0 0 24px;
-        border: 1px $blue solid;
-        border-radius: 48px;
-        padding: 21px 32px;
-    }
-
-    // .form__checkbox
-
-    &__checkbox {
-        position: absolute;
-        z-index: -1;
-        opacity: 0;
-
-        & + label {
-            // align-items: center;
-            position: relative;
-            &::before {
-                cursor: pointer;
-                content: '';
-                display: block;
-                width: 30px;
-                top: 30px;
-                height: 30px;
-                flex-shrink: 0;
-                flex-grow: 0;
-                left: -46px;
-                border: 2px solid #000;
-                border-radius: 0.25em;
-                margin-right: 0.5em;
-                background-repeat: no-repeat;
-                background-position: center center;
-                background-size: 50% 50%;
-                position: relative;
-                // top: 5px;
-                // margin: 0 14px 0 0;
-                transition: $animation;
-            }
-        }
-        &:checked + label::before {
-            border-color: $blue;
-            background-color: $blue;
-            background-image: url('@svg/check.svg');
-        }
-
-        &:not(:disabled):not(:checked) + label:hover::before {
-            border-color: $blue-hover;
-        }
-        /* стили для активного состояния чекбокса (при нажатии на него) */
-        &:not(:disabled):active + label::before {
-            background-color: $blue-hover;
-            border-color: $blue-hover;
-        }
-        /* стили для чекбокса, находящегося в фокусе */
-        &:focus + label::before {
-            box-shadow: 0 0 0 0.2rem rgba(74, 161, 224, 0.479);
-        }
-        /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
-        &:focus:not(:checked) + label::before {
-            border-color: #80bdff;
-        }
-        /* стили для чекбокса, находящегося в состоянии disabled */
-        &:disabled + label::before {
-            background-color: #ffffff;
-        }
-    }
-
-    // .form__privacy
-
-    &__privacy {
-        // max-width: 300px;
-        font-size: 12px;
-        top: -30px;
-        display: inline-block;
-        max-width: 239px;
-        margin: 0 0 0 46px;
-        &-url {
-            display: inline;
-            font-size: 12px;
-            text-decoration: underline !important;
-
-            color: #000;
-        }
+    @media (width < ($md3 + px)) {
+        margin: 0 0 54px;
     }
 }
 .title {
 }
 .button {
     float: right;
+    @media (width < ($md2 + px)) {
+        display: block;
+        float: left;
+    }
+    @media (width < ($md3 + px)) {
+        width: 100%;
+    }
 }
 
 .title {
@@ -139,6 +51,10 @@
     flex-direction: column;
     &__logo {
         margin: 0 0 48px;
+        @media (width < ($md2 + px)) {
+            margin: 0 0 16px;
+            max-width: 184px;
+        }
     }
 }
 .contact {
@@ -148,10 +64,14 @@
         align-items: center;
         max-width: 339px;
         margin: 0 0 21px;
-        img {
-            display: inline-block;
+        & > * {
+            @media (width < ($md3 + px)) {
+                font-size: 14px;
+            }
         }
         img {
+            display: inline-block;
+
             padding: 0 16px 0 0;
         }
     }
@@ -175,14 +95,38 @@
     margin: 0 0 34px;
     display: flex;
     justify-content: space-between;
+
+    align-items: baseline;
+    @media (width < ($md3 + px)) {
+        padding: 0 32px;
+        margin: 0 0 48px;
+        flex-direction: column;
+    }
     &__left {
+        flex: 0 1 auto;
+        @media (width < ($md2 + px)) {
+            margin: 0 0 16px;
+            flex: 0 1 auto;
+            margin: 0 0 8px;
+            font-size: 12px;
+        }
     }
 
     // .footer-bottom__center
 
     &__center {
+        @media (width < ($md2 + px)) {
+            margin: 0 0 16px;
+        }
+        @media (width < ($md2 + px)) {
+            flex: 0 1 auto;
+        }
         a {
             color: $blue;
+            @media (width < ($md3 + px)) {
+                margin: 0 0 8px;
+                font-size: 12px;
+            }
         }
     }
 
@@ -190,8 +134,21 @@
 
     &__right {
         display: flex;
+        @media (width < ($md3 + px)) {
+            flex-direction: column;
+        }
+        @media (width < ($md2 + px)) {
+            margin: 0 0 16px;
+        }
         span {
             padding: 0 8px 0;
+            @media (width < ($md2 + px)) {
+                padding: 0 2px 0;
+            }
+            @media (width < ($md3 + px)) {
+                margin: 0 0 8px;
+                font-size: 12px;
+            }
         }
     }
 }

@@ -4,19 +4,40 @@
     margin: 0 0 95px;
     border-radius: 48px;
     background-color: $secondBg;
+    @media (width < ($md2 + px)) {
+        flex-direction: column;
+
+        margin: 0 0 48px;
+    }
     &__info {
         flex: 1 1 50%;
         padding: 72px 64px;
         display: flex;
         flex-direction: column;
+        @media (width < ($md2 + px)) {
+            padding: 32px;
+            flex: 1 1 auto;
+        }
     }
-
+    &__button {
+        max-width: 265px;
+        text-align: center;
+        @media (width < ($md2 + px)) {
+            max-width: 100%;
+        }
+    }
     // .about__img
 
     &__img {
         flex: 1 1 50%;
+        @media (width < ($md2 + px)) {
+            flex: 1 1 auto;
+        }
         img {
             border-radius: 48px;
+            @media (width < ($md2 + px)) {
+                width: 100%;
+            }
         }
     }
 }
@@ -25,6 +46,9 @@
 
     &__title {
         margin: 0 0 24px;
+        @media (width < ($md2 + px)) {
+            margin: 0 0 16px;
+        }
     }
 
     // .info-about__text
@@ -32,6 +56,10 @@
     &__text {
         flex: 1 1 auto;
         max-width: 420px;
+        @media (width < ($md2 + px)) {
+            margin: 0 0 24px;
+            max-width: 100%;
+        }
     }
 }
 .main {
